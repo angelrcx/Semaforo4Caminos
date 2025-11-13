@@ -29,7 +29,7 @@ always @(*) begin
     case (Estado)
         2'b00: Segmentos_Color = 7'b1100011; 
         2'b01: Segmentos_Color = 7'b0001000; 
-        2'b10: Segmentos_Color = 7'b1111017;
+        2'b10: Segmentos_Color = 7'b1111011;
         default: Segmentos_Color = 7'b1111111;
     endcase
 end
