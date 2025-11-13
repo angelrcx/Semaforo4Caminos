@@ -36,7 +36,10 @@ module Semaforo(
         
         case (Estado)
             2'b00: LedVerde = 1'b1;
-            2'b01: LedAmarillo = 1'b1 & clk;
+            2'b01: begin
+                if(clk)
+                LedAmarillo = 1'b1;
+            end
             2'b10: LedRojo = 1'b1;
             default: LedRojo = 1'b1;
         endcase
