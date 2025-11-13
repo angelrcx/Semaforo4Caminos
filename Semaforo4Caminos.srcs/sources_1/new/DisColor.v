@@ -27,10 +27,10 @@ module DisColor(
     
 always @(*) begin
     case (Estado)
-        2'b00: Segmentos_Color = 7'b0000000; 
-        2'b01: Segmentos_Color = 7'b0000001; 
-        2'b10: Segmentos_Color = 7'b0000100;
-        default: Segmentos_Color = 7'b1000000;
+        2'b00: Segmentos_Color = 7'b1100011; 
+        2'b01: Segmentos_Color = 7'b0001000; 
+        2'b10: Segmentos_Color = 7'b1111017;
+        default: Segmentos_Color = 7'b1111111;
     endcase
 end
 endmodule
