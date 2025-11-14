@@ -75,6 +75,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/DisColor.v">
       <File Path="$PSRCDIR/sources_1/new/Conversor.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
@@ -83,6 +84,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/Conversor.v">
       <File Path="$PSRCDIR/sources_1/new/BtnPulsar.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
@@ -91,6 +93,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/BtnPulsar.v">
       <File Path="$PSRCDIR/sources_1/new/IncDecDisp.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
@@ -99,6 +102,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/IncDecDisp.v">
       <File Path="$PSRCDIR/sources_1/new/ModeUniDec.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
