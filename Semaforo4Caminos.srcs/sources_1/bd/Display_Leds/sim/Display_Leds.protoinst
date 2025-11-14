@@ -1,9 +1,0 @@
-{
-	"version": "1.0",
-	"modules": {
-		"Display_Leds": {
-			"proto_instances": {
-			}
-		}
-	}
-}
