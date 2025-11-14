@@ -1,0 +1,224 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x7B8C19823CDBE418",
+      "device": "xc7a100tcsg324-1",
+      "name": "Display_Leds",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "Div_frecuencia_0": "",
+      "Semaforo_0": "",
+      "DisColor_0": ""
+    },
+    "ports": {
+      "clk_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "rst_0",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "Display_Leds_clk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "rst_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "Segmentos_Color_0": {
+        "direction": "O",
+        "left": "6",
+        "right": "0"
+      },
+      "LedVerde_0": {
+        "direction": "O"
+      },
+      "LedAmarillo_0": {
+        "direction": "O"
+      },
+      "LedRojo_0": {
+        "direction": "O"
+      },
+      "Estado_0": {
+        "direction": "I",
+        "left": "1",
+        "right": "0"
+      }
+    },
+    "components": {
+      "Div_frecuencia_0": {
+        "vlnv": "xilinx.com:module_ref:Div_frecuencia:1.0",
+        "xci_name": "Display_Leds_Div_frecuencia_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Div_frecuencia",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "Display_Leds_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clkout": {
+            "direction": "O"
+          }
+        }
+      },
+      "Semaforo_0": {
+        "vlnv": "xilinx.com:module_ref:Semaforo:1.0",
+        "xci_name": "Display_Leds_Semaforo_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Semaforo",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "Estado": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "LedVerde": {
+            "direction": "O"
+          },
+          "LedAmarillo": {
+            "direction": "O"
+          },
+          "LedRojo": {
+            "direction": "O"
+          }
+        }
+      },
+      "DisColor_0": {
+        "vlnv": "xilinx.com:module_ref:DisColor:1.0",
+        "xci_name": "Display_Leds_DisColor_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DisColor",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "Estado": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "Segmentos_Color": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "Div_frecuencia_0_clkout": {
+        "ports": [
+          "Div_frecuencia_0/clkout",
+          "Semaforo_0/clk"
+        ]
+      },
+      "clk_0_1": {
+        "ports": [
+          "clk_0",
+          "Div_frecuencia_0/clk"
+        ]
+      },
+      "rst_0_1": {
+        "ports": [
+          "rst_0",
+          "Div_frecuencia_0/rst",
+          "Semaforo_0/rst"
+        ]
+      },
+      "DisColor_0_Segmentos_Color": {
+        "ports": [
+          "DisColor_0/Segmentos_Color",
+          "Segmentos_Color_0"
+        ]
+      },
+      "Semaforo_0_LedVerde": {
+        "ports": [
+          "Semaforo_0/LedVerde",
+          "LedVerde_0"
+        ]
+      },
+      "Semaforo_0_LedAmarillo": {
+        "ports": [
+          "Semaforo_0/LedAmarillo",
+          "LedAmarillo_0"
+        ]
+      },
+      "Semaforo_0_LedRojo": {
+        "ports": [
+          "Semaforo_0/LedRojo",
+          "LedRojo_0"
+        ]
+      },
+      "Estado_0_1": {
+        "ports": [
+          "Estado_0",
+          "Semaforo_0/Estado",
+          "DisColor_0/Estado"
+        ]
+      }
+    }
+  }
+}
