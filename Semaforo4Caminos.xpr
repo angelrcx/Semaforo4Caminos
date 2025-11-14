@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="40" Path="D:/angelinge/7to/LabArq/Semaforo4Caminos/Semaforo4Caminos.xpr">
+<Project Version="7" Minor="40" Path="C:/Users/Jorge/OneDrive/Escritorio/IC/7mosemestre/Lab arqui/Semaforo4Caminos/Semaforo4Caminos.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="c79200359e4b482bb64478666ea0dafa"/>
@@ -84,6 +84,14 @@
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/new/IncDecDisp.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/Memoria.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
