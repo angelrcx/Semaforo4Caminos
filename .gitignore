@@ -1,18 +1,33 @@
-# Archivos y carpetas generados por Vivado que DEBEN ignorarse
 *.log
 *.jou
+*.rpt
+*.str
+*_timing_summary_routed.rpt
+*_timing_summary_post_place.rpt
+*.vds
+*.pb
+
+# Directorios generados por Vivado
 *.cache/
-*.data/
 *.hw/
-*.impl/
 *.ip_user_files/
 *.runs/
 *.sim/
-*.srcs/sources_1/bd/
-*.board/
+*.srcs/sources_1/bd/*/hw_handoff/
+*.srcs/sources_1/bd/*/hdl/
+*.srcs/sources_1/bd/*/ip/
+*.srcs/sources_1/bd/*/ui/
+*.srcs/sources_1/imports/
 
-# Ignorar archivos de proyecto, excepto el principal
+# Archivos específicos del proyecto que se pueden regenerar
 *.xpr.internal
-*.xpr.cache
-*.xpr.user
-*.str
+*.xpr.orig
+*_wrapper.v
+*_wrapper.vhd
+*.tcl.layout
+*.wdb
+.Xil/
+
+# Archivos de WebTalk (estadísticas de uso)
+webtalk.log
+webtalk.jou
