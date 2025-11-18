@@ -83,6 +83,24 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/bd/DisplayColor_Leds/DisplayColor_Leds.bd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/IncDecDisp.v">
+      <File Path="$PSRCDIR/sources_1/new/DisColor.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/Leds.v">
       <File Path="$PSRCDIR/sources_1/new/Div_frecuencia.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
@@ -91,6 +109,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/Memoria.v">
       <File Path="$PSRCDIR/sources_1/new/IncDecDisp.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
@@ -107,6 +126,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/bd/DisplayColor_Leds/hdl/DisplayColor_Leds_wrapper.v">
       <File Path="$PSRCDIR/sources_1/new/Memoria.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
@@ -115,6 +135,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/BtnPulsar.v">
       <File Path="$PSRCDIR/sources_1/new/Semaforo_Top.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
@@ -123,6 +144,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/IncrementaDecrementa.v">
       <File Path="$PSRCDIR/sources_1/bd/DisplayColor_Leds/hdl/DisplayColor_Leds_wrapper.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
