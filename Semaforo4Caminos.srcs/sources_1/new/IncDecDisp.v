@@ -30,24 +30,27 @@ module IncDecDisp(
     reg [3:0] registro = 0;
     always@(posedge clk, negedge rst)
     begin
-        if(rst) begin
-            registro = 0;
-        end
-        if(p_btn1)
-        begin
-            if(registro < 4'b1001)
-                registro = registro + 1;
-            if(registro == 4'b1001)
-                registro = 0;
-        end
-        if(p_btn2)
-        begin
-            if(registro > 4'b0000)
-                registro = registro - 1;
-            if(registro == 4'b0000)
-                registro = 9;
+        if(!rst)
+            registro <= 0;
+        else begin
+            
+            if(p_btn1) begin
+                if(registro == 9)
+                    registro <= 0;
+                else
+                    registro <= registro + 1;
+            end
+    
+            else if(p_btn2) begin
+                if(registro == 0)
+                    registro <= 9;
+                else
+                    registro <= registro - 1;
+            end
+    
         end
     end
     assign out1 = registro;
 endmodule
+
 
