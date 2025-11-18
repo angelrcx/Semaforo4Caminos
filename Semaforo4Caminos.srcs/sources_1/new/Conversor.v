@@ -21,22 +21,32 @@
 
 
 module Conversor(
-    input [3:0]datBin,
-    input [1:0]Mode,
+    input [3:0] datBin,
+    input [1:0] Mode,
     input Set,
-    output reg [5:0]datDec
+    input clk,
+    input rst,
+    output reg [5:0] datDec
     );
+
     reg [5:0] calculated_value;
-    always @(*) begin
-        if (Set) begin
-            if(Mode == 2'b00) begin
-                calculated_value = datBin;
+
+    always @(posedge clk or negedge rst) begin
+        if(!rst) begin
+            calculated_value <= 0;
+            datDec <= 0;
+        end
+        else begin
+            if(Set) begin
+                case(Mode)
+                    2'b00:  calculated_value <= datBin;                            // unidades
+                    2'b01:  calculated_value <= (datBin * 8) + (datBin * 2);       // decenas
+                    default: calculated_value <= 0;
+                endcase
             end
-            if(Mode == 2'b01) begin
-                calculated_value = calculated_value + ((datBin*8) + (datBin*2));
+            else begin
+                datDec <= calculated_value;
             end
-        end else begin
-                datDec = calculated_value[5:0];  
         end
     end
 endmodule
