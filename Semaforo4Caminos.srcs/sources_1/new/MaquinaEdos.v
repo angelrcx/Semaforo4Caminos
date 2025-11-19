@@ -25,7 +25,7 @@ module MaquinaEdos(
     input clk,
     input start,
     input [5:0] contador,
-    output reg [2:0] address
+    output reg [1:0] address
     );
     
     reg [1:0] estado;

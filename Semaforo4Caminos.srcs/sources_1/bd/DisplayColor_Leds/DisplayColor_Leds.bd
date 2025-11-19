@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x7B8C19823CDBE418",
+      "boundary_crc": "0x9EA51655F42BF929",
       "device": "xc7a100tcsg324-1",
       "name": "DisplayColor_Leds",
       "synth_flow_mode": "Hierarchical",
@@ -11,7 +11,23 @@
     "design_tree": {
       "DisColor_0": "",
       "Div_frecuencia_0": "",
-      "Leds_0": ""
+      "Leds_0": "",
+      "BtnPulsar_0": "",
+      "BtnPulsar_1": "",
+      "BtnPulsar_2": "",
+      "BtnPulsar_3": "",
+      "IncDecDisp_0": "",
+      "ModeIncDec_0": "",
+      "Conversor_0": "",
+      "Memoria_0": "",
+      "BtnPulsar_4": "",
+      "xlconstant_0": "",
+      "Contador_0": "",
+      "Deco7SEG_0": "",
+      "Deco7SEG_1": "",
+      "MaquinaEdos_0": "",
+      "DivisorFrecuencia_0": "",
+      "bin_a_bcd_0": ""
     },
     "ports": {
       "rst_0": {
@@ -27,11 +43,6 @@
             "value_src": "default"
           }
         }
-      },
-      "Estado_0": {
-        "direction": "I",
-        "left": "1",
-        "right": "0"
       },
       "clk_0": {
         "type": "clk",
@@ -72,6 +83,34 @@
       },
       "LedRojo_0": {
         "direction": "O"
+      },
+      "Set_0": {
+        "direction": "I"
+      },
+      "btn_0": {
+        "direction": "I"
+      },
+      "btn_1": {
+        "direction": "I"
+      },
+      "btn_2": {
+        "direction": "I"
+      },
+      "btn_3": {
+        "direction": "I"
+      },
+      "btn_4": {
+        "direction": "I"
+      },
+      "Out7seg_0": {
+        "direction": "O",
+        "left": "6",
+        "right": "0"
+      },
+      "Out7seg_1": {
+        "direction": "O",
+        "left": "6",
+        "right": "0"
       }
     },
     "components": {
@@ -144,6 +183,10 @@
               "ASSOCIATED_RESET": {
                 "value": "rst",
                 "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "DisplayColor_Leds_clk_0",
+                "value_src": "default_prop"
               }
             }
           },
@@ -166,33 +209,608 @@
             "direction": "O"
           }
         }
+      },
+      "BtnPulsar_0": {
+        "vlnv": "xilinx.com:module_ref:BtnPulsar:1.0",
+        "xci_name": "DisplayColor_Leds_BtnPulsar_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "BtnPulsar",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "DisplayColor_Leds_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "btn": {
+            "direction": "I"
+          },
+          "p_btn": {
+            "direction": "O"
+          }
+        }
+      },
+      "BtnPulsar_1": {
+        "vlnv": "xilinx.com:module_ref:BtnPulsar:1.0",
+        "xci_name": "DisplayColor_Leds_BtnPulsar_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "BtnPulsar",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "DisplayColor_Leds_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "btn": {
+            "direction": "I"
+          },
+          "p_btn": {
+            "direction": "O"
+          }
+        }
+      },
+      "BtnPulsar_2": {
+        "vlnv": "xilinx.com:module_ref:BtnPulsar:1.0",
+        "xci_name": "DisplayColor_Leds_BtnPulsar_0_2",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "BtnPulsar",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "DisplayColor_Leds_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "btn": {
+            "direction": "I"
+          },
+          "p_btn": {
+            "direction": "O"
+          }
+        }
+      },
+      "BtnPulsar_3": {
+        "vlnv": "xilinx.com:module_ref:BtnPulsar:1.0",
+        "xci_name": "DisplayColor_Leds_BtnPulsar_0_3",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "BtnPulsar",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "DisplayColor_Leds_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "btn": {
+            "direction": "I"
+          },
+          "p_btn": {
+            "direction": "O"
+          }
+        }
+      },
+      "IncDecDisp_0": {
+        "vlnv": "xilinx.com:module_ref:IncDecDisp:1.0",
+        "xci_name": "DisplayColor_Leds_IncDecDisp_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "IncDecDisp",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "DisplayColor_Leds_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "p_btn1": {
+            "direction": "I"
+          },
+          "p_btn2": {
+            "direction": "I"
+          },
+          "out1": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "ModeIncDec_0": {
+        "vlnv": "xilinx.com:module_ref:ModeIncDec:1.0",
+        "xci_name": "DisplayColor_Leds_ModeIncDec_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ModeIncDec",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "DisplayColor_Leds_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "p_btn1": {
+            "direction": "I"
+          },
+          "p_btn2": {
+            "direction": "I"
+          },
+          "out1": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          }
+        }
+      },
+      "Conversor_0": {
+        "vlnv": "xilinx.com:module_ref:Conversor:1.0",
+        "xci_name": "DisplayColor_Leds_Conversor_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Conversor",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "DisplayColor_Leds_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "datBin": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "Mode": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "Set": {
+            "direction": "I"
+          },
+          "datDec": {
+            "direction": "O",
+            "left": "5",
+            "right": "0"
+          }
+        }
+      },
+      "Memoria_0": {
+        "vlnv": "xilinx.com:module_ref:Memoria:1.0",
+        "xci_name": "DisplayColor_Leds_Memoria_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Memoria",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "DisplayColor_Leds_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "data_in": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "addr_in": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "cs": {
+            "direction": "I"
+          },
+          "read": {
+            "direction": "I"
+          },
+          "write": {
+            "direction": "I"
+          },
+          "data_out": {
+            "direction": "O",
+            "left": "5",
+            "right": "0"
+          }
+        }
+      },
+      "BtnPulsar_4": {
+        "vlnv": "xilinx.com:module_ref:BtnPulsar:1.0",
+        "xci_name": "DisplayColor_Leds_BtnPulsar_4_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "BtnPulsar",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "DisplayColor_Leds_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "btn": {
+            "direction": "I"
+          },
+          "p_btn": {
+            "direction": "O"
+          }
+        }
+      },
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "DisplayColor_Leds_xlconstant_0_0"
+      },
+      "Contador_0": {
+        "vlnv": "xilinx.com:module_ref:Contador:1.0",
+        "xci_name": "DisplayColor_Leds_Contador_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Contador",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "data_in": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "data_out": {
+            "direction": "O",
+            "left": "5",
+            "right": "0"
+          }
+        }
+      },
+      "Deco7SEG_0": {
+        "vlnv": "xilinx.com:module_ref:Deco7SEG:1.0",
+        "xci_name": "DisplayColor_Leds_Deco7SEG_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Deco7SEG",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "in1": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "Out7seg": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          }
+        }
+      },
+      "Deco7SEG_1": {
+        "vlnv": "xilinx.com:module_ref:Deco7SEG:1.0",
+        "xci_name": "DisplayColor_Leds_Deco7SEG_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Deco7SEG",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "in1": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "Out7seg": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          }
+        }
+      },
+      "MaquinaEdos_0": {
+        "vlnv": "xilinx.com:module_ref:MaquinaEdos:1.0",
+        "xci_name": "DisplayColor_Leds_MaquinaEdos_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "MaquinaEdos",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "DisplayColor_Leds_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "start": {
+            "direction": "I"
+          },
+          "contador": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "address": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          }
+        }
+      },
+      "DivisorFrecuencia_0": {
+        "vlnv": "xilinx.com:module_ref:DivisorFrecuencia:1.0",
+        "xci_name": "DisplayColor_Leds_DivisorFrecuencia_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DivisorFrecuencia",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "DisplayColor_Leds_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clkout": {
+            "direction": "O"
+          }
+        }
+      },
+      "bin_a_bcd_0": {
+        "vlnv": "xilinx.com:module_ref:bin_a_bcd:1.0",
+        "xci_name": "DisplayColor_Leds_bin_a_bcd_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "bin_a_bcd",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "DisplayColor_Leds_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "bin_in": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "conf_in": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "set": {
+            "direction": "I"
+          },
+          "bcd_dec": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "bcd_unid": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
       }
     },
     "nets": {
-      "Div_frecuencia_0_clkout": {
-        "ports": [
-          "Div_frecuencia_0/clkout",
-          "Leds_0/clk"
-        ]
-      },
       "rst_0_1": {
         "ports": [
           "rst_0",
           "Div_frecuencia_0/rst",
-          "Leds_0/rst"
-        ]
-      },
-      "Estado_0_1": {
-        "ports": [
-          "Estado_0",
-          "DisColor_0/Estado",
-          "Leds_0/Estado"
+          "Leds_0/rst",
+          "BtnPulsar_4/rst",
+          "BtnPulsar_3/rst",
+          "BtnPulsar_2/rst",
+          "BtnPulsar_1/rst",
+          "BtnPulsar_0/rst",
+          "IncDecDisp_0/rst",
+          "ModeIncDec_0/rst",
+          "MaquinaEdos_0/rst",
+          "Contador_0/rst",
+          "Conversor_0/rst",
+          "Memoria_0/reset",
+          "DivisorFrecuencia_0/rst",
+          "bin_a_bcd_0/rst"
         ]
       },
       "clk_0_1": {
         "ports": [
           "clk_0",
-          "Div_frecuencia_0/clk"
+          "Div_frecuencia_0/clk",
+          "BtnPulsar_4/clk",
+          "BtnPulsar_3/clk",
+          "BtnPulsar_2/clk",
+          "BtnPulsar_1/clk",
+          "BtnPulsar_0/clk",
+          "IncDecDisp_0/clk",
+          "ModeIncDec_0/clk",
+          "Conversor_0/clk",
+          "Memoria_0/clk",
+          "MaquinaEdos_0/clk",
+          "Leds_0/clk",
+          "DivisorFrecuencia_0/clk",
+          "bin_a_bcd_0/clk"
         ]
       },
       "DisColor_0_Segmentos_Color": {
@@ -217,6 +835,151 @@
         "ports": [
           "Leds_0/LedRojo",
           "LedRojo_0"
+        ]
+      },
+      "BtnPulsar_0_p_btn": {
+        "ports": [
+          "BtnPulsar_0/p_btn",
+          "IncDecDisp_0/p_btn1"
+        ]
+      },
+      "BtnPulsar_1_p_btn": {
+        "ports": [
+          "BtnPulsar_1/p_btn",
+          "IncDecDisp_0/p_btn2"
+        ]
+      },
+      "BtnPulsar_2_p_btn": {
+        "ports": [
+          "BtnPulsar_2/p_btn",
+          "ModeIncDec_0/p_btn1"
+        ]
+      },
+      "BtnPulsar_3_p_btn": {
+        "ports": [
+          "BtnPulsar_3/p_btn",
+          "ModeIncDec_0/p_btn2"
+        ]
+      },
+      "IncDecDisp_0_out1": {
+        "ports": [
+          "IncDecDisp_0/out1",
+          "Conversor_0/datBin"
+        ]
+      },
+      "ModeIncDec_0_out1": {
+        "ports": [
+          "ModeIncDec_0/out1",
+          "Conversor_0/Mode"
+        ]
+      },
+      "Set_0_1": {
+        "ports": [
+          "Set_0",
+          "Conversor_0/Set",
+          "Memoria_0/write",
+          "bin_a_bcd_0/set"
+        ]
+      },
+      "Conversor_0_datDec": {
+        "ports": [
+          "Conversor_0/datDec",
+          "Memoria_0/data_in",
+          "bin_a_bcd_0/conf_in"
+        ]
+      },
+      "BtnPulsar_4_p_btn": {
+        "ports": [
+          "BtnPulsar_4/p_btn",
+          "Memoria_0/read",
+          "MaquinaEdos_0/start"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "Memoria_0/cs"
+        ]
+      },
+      "Contador_0_data_out": {
+        "ports": [
+          "Contador_0/data_out",
+          "MaquinaEdos_0/contador",
+          "bin_a_bcd_0/bin_in"
+        ]
+      },
+      "MaquinaEdos_0_address": {
+        "ports": [
+          "MaquinaEdos_0/address",
+          "DisColor_0/Estado",
+          "Leds_0/Estado",
+          "Memoria_0/addr_in"
+        ]
+      },
+      "Memoria_0_data_out": {
+        "ports": [
+          "Memoria_0/data_out",
+          "Contador_0/data_in"
+        ]
+      },
+      "bin_a_bcd_0_bcd_dec": {
+        "ports": [
+          "bin_a_bcd_0/bcd_dec",
+          "Deco7SEG_0/in1"
+        ]
+      },
+      "bin_a_bcd_0_bcd_unid": {
+        "ports": [
+          "bin_a_bcd_0/bcd_unid",
+          "Deco7SEG_1/in1"
+        ]
+      },
+      "btn_0_1": {
+        "ports": [
+          "btn_0",
+          "BtnPulsar_0/btn"
+        ]
+      },
+      "btn_1_1": {
+        "ports": [
+          "btn_1",
+          "BtnPulsar_1/btn"
+        ]
+      },
+      "btn_2_1": {
+        "ports": [
+          "btn_2",
+          "BtnPulsar_2/btn"
+        ]
+      },
+      "btn_3_1": {
+        "ports": [
+          "btn_3",
+          "BtnPulsar_3/btn"
+        ]
+      },
+      "btn_4_1": {
+        "ports": [
+          "btn_4",
+          "BtnPulsar_4/btn"
+        ]
+      },
+      "DivisorFrecuencia_0_clkout": {
+        "ports": [
+          "DivisorFrecuencia_0/clkout",
+          "Contador_0/clk"
+        ]
+      },
+      "Deco7SEG_0_Out7seg": {
+        "ports": [
+          "Deco7SEG_0/Out7seg",
+          "Out7seg_0"
+        ]
+      },
+      "Deco7SEG_1_Out7seg": {
+        "ports": [
+          "Deco7SEG_1/Out7seg",
+          "Out7seg_1"
         ]
       }
     }

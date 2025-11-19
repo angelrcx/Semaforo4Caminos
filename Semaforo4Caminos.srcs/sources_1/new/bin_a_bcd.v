@@ -21,10 +21,31 @@
 
 
 module bin_a_bcd(
-    input [6:0] bin_in,
-    output [3:0] bcd_dec,
-    output [3:0] bcd_unid
+    input [5:0] bin_in,
+    input [5:0] conf_in,
+    input set,
+    input clk,
+    input rst,
+    output reg [3:0] bcd_dec,
+    output reg [3:0] bcd_unid
     );
-    assign bcd_dec  = bin_in / 10;
-    assign bcd_unid = bin_in % 10;
+    
+    always@(posedge clk, negedge rst) begin
+        if(!rst)begin
+            bcd_dec =0; 
+            bcd_unid = 0;
+        end
+        else if(set) begin
+            bcd_dec  = conf_in / 6'd10;
+            bcd_unid = conf_in % 6'd10; 
+        end
+        else begin
+            bcd_dec  = bin_in / 6'd10;
+            bcd_unid = bin_in % 6'd10;
+        end
+        
+             
+    end
+    
+     
 endmodule
