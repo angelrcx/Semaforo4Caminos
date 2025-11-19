@@ -25,7 +25,8 @@ module Memoria(
     input [5:0] data_in,
     input [1:0] addr_in, 
     input cs,
-    input rw,
+    input read,
+    input write,
     input reset,
     output reg [5:0] data_out
     );
@@ -34,8 +35,8 @@ module Memoria(
     reg [5:0] reg_amarillo;
     reg [5:0] reg_rojo;
 
-always @(posedge clk or posedge reset) begin
-        if (reset) begin
+always @(posedge clk or negedge reset) begin
+        if (!reset) begin
             reg_verde    = 6'd10;
             reg_amarillo = 6'd5;
             reg_rojo     = (reg_verde + reg_amarillo) * 3;
@@ -44,7 +45,7 @@ always @(posedge clk or posedge reset) begin
         else begin
             if (cs) begin
                 
-                if (rw==0) begin
+                if (write == 0) begin
                     case (addr_in)
                         2'b00: begin
                             reg_verde = data_in;
@@ -56,7 +57,7 @@ always @(posedge clk or posedge reset) begin
                         end
                     endcase
                 end 
-                else begin
+                if (read) begin
                     case (addr_in)
                         2'b00: data_out = reg_verde;
                         2'b01: data_out = reg_amarillo;
