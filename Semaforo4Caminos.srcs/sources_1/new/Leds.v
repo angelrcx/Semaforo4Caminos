@@ -23,7 +23,9 @@
 module Leds(
     input clk,
     input rst,
+    input InColor,
     input [1:0] Estado,
+    input mode,
     output reg LedVerde,
     output reg LedAmarillo,
     output reg LedRojo
@@ -34,14 +36,24 @@ module Leds(
         LedAmarillo = 1'b0;
         LedRojo = 1'b0;
         
-        case (Estado)
-            2'b00: LedVerde = 1'b1;
-            2'b01: begin
-                if(clk)
-                LedAmarillo = 1'b1;
-            end
-            2'b10: LedRojo = 1'b1;
-            default: LedRojo = 1'b1;
-        endcase
+        if(mode) begin
+            case (InColor)
+            0: LedVerde = 1'b1;
+            1: LedAmarillo = 1'b1;
+            endcase
+        end
+        else begin
+            case (Estado)
+                    2'b00: LedVerde = 1'b1;
+                    2'b01: begin
+                        if(clk)
+                        LedAmarillo = 1'b1;
+                    end
+                    2'b10: LedRojo = 1'b1;
+                    default: LedRojo = 1'b1;
+                endcase
+        end
+
+            
     end
 endmodule

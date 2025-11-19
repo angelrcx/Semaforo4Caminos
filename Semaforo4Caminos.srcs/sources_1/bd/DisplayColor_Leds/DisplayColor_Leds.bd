@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x9EA51655F42BF929",
+      "boundary_crc": "0x2F19F18968B0CFF1",
       "device": "xc7a100tcsg324-1",
       "name": "DisplayColor_Leds",
       "synth_flow_mode": "Hierarchical",
@@ -11,23 +11,22 @@
     "design_tree": {
       "DisColor_0": "",
       "Div_frecuencia_0": "",
-      "Leds_0": "",
       "BtnPulsar_0": "",
       "BtnPulsar_1": "",
       "BtnPulsar_2": "",
       "BtnPulsar_3": "",
       "IncDecDisp_0": "",
       "ModeIncDec_0": "",
-      "Conversor_0": "",
-      "Memoria_0": "",
       "BtnPulsar_4": "",
-      "xlconstant_0": "",
       "Contador_0": "",
-      "Deco7SEG_0": "",
-      "Deco7SEG_1": "",
       "MaquinaEdos_0": "",
+      "bin_a_bcd_0": "",
       "DivisorFrecuencia_0": "",
-      "bin_a_bcd_0": ""
+      "Leds_0": "",
+      "DecoBCDa7SEG_0": "",
+      "DecoBCDa7SEG_1": "",
+      "Conversor_0": "",
+      "Memoria_1": ""
     },
     "ports": {
       "rst_0": {
@@ -70,11 +69,6 @@
           }
         }
       },
-      "Segmentos_Color_0": {
-        "direction": "O",
-        "left": "6",
-        "right": "0"
-      },
       "LedVerde_0": {
         "direction": "O"
       },
@@ -102,12 +96,20 @@
       "btn_4": {
         "direction": "I"
       },
+      "addr_in2_0": {
+        "direction": "I"
+      },
       "Out7seg_0": {
         "direction": "O",
         "left": "6",
         "right": "0"
       },
       "Out7seg_1": {
+        "direction": "O",
+        "left": "6",
+        "right": "0"
+      },
+      "Segmentos_Color_0": {
         "direction": "O",
         "left": "6",
         "right": "0"
@@ -163,49 +165,6 @@
             "direction": "I"
           },
           "clkout": {
-            "direction": "O"
-          }
-        }
-      },
-      "Leds_0": {
-        "vlnv": "xilinx.com:module_ref:Leds:1.0",
-        "xci_name": "DisplayColor_Leds_Leds_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "Leds",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "DisplayColor_Leds_clk_0",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "Estado": {
-            "direction": "I",
-            "left": "1",
-            "right": "0"
-          },
-          "LedVerde": {
-            "direction": "O"
-          },
-          "LedAmarillo": {
-            "direction": "O"
-          },
-          "LedRojo": {
             "direction": "O"
           }
         }
@@ -430,106 +389,6 @@
           }
         }
       },
-      "Conversor_0": {
-        "vlnv": "xilinx.com:module_ref:Conversor:1.0",
-        "xci_name": "DisplayColor_Leds_Conversor_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "Conversor",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "DisplayColor_Leds_clk_0",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "datBin": {
-            "direction": "I",
-            "left": "3",
-            "right": "0"
-          },
-          "Mode": {
-            "direction": "I",
-            "left": "1",
-            "right": "0"
-          },
-          "Set": {
-            "direction": "I"
-          },
-          "datDec": {
-            "direction": "O",
-            "left": "5",
-            "right": "0"
-          }
-        }
-      },
-      "Memoria_0": {
-        "vlnv": "xilinx.com:module_ref:Memoria:1.0",
-        "xci_name": "DisplayColor_Leds_Memoria_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "Memoria",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "reset",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "DisplayColor_Leds_clk_0",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "reset": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "data_in": {
-            "direction": "I",
-            "left": "5",
-            "right": "0"
-          },
-          "addr_in": {
-            "direction": "I",
-            "left": "1",
-            "right": "0"
-          },
-          "cs": {
-            "direction": "I"
-          },
-          "read": {
-            "direction": "I"
-          },
-          "write": {
-            "direction": "I"
-          },
-          "data_out": {
-            "direction": "O",
-            "left": "5",
-            "right": "0"
-          }
-        }
-      },
       "BtnPulsar_4": {
         "vlnv": "xilinx.com:module_ref:BtnPulsar:1.0",
         "xci_name": "DisplayColor_Leds_BtnPulsar_4_0",
@@ -565,10 +424,6 @@
           }
         }
       },
-      "xlconstant_0": {
-        "vlnv": "xilinx.com:ip:xlconstant:1.1",
-        "xci_name": "DisplayColor_Leds_xlconstant_0_0"
-      },
       "Contador_0": {
         "vlnv": "xilinx.com:module_ref:Contador:1.0",
         "xci_name": "DisplayColor_Leds_Contador_0_0",
@@ -600,48 +455,6 @@
           "data_out": {
             "direction": "O",
             "left": "5",
-            "right": "0"
-          }
-        }
-      },
-      "Deco7SEG_0": {
-        "vlnv": "xilinx.com:module_ref:Deco7SEG:1.0",
-        "xci_name": "DisplayColor_Leds_Deco7SEG_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "Deco7SEG",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "in1": {
-            "direction": "I",
-            "left": "3",
-            "right": "0"
-          },
-          "Out7seg": {
-            "direction": "O",
-            "left": "6",
-            "right": "0"
-          }
-        }
-      },
-      "Deco7SEG_1": {
-        "vlnv": "xilinx.com:module_ref:Deco7SEG:1.0",
-        "xci_name": "DisplayColor_Leds_Deco7SEG_0_1",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "Deco7SEG",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "in1": {
-            "direction": "I",
-            "left": "3",
-            "right": "0"
-          },
-          "Out7seg": {
-            "direction": "O",
-            "left": "6",
             "right": "0"
           }
         }
@@ -685,38 +498,6 @@
             "direction": "O",
             "left": "1",
             "right": "0"
-          }
-        }
-      },
-      "DivisorFrecuencia_0": {
-        "vlnv": "xilinx.com:module_ref:DivisorFrecuencia:1.0",
-        "xci_name": "DisplayColor_Leds_DivisorFrecuencia_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "DivisorFrecuencia",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "DisplayColor_Leds_clk_0",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "clkout": {
-            "direction": "O"
           }
         }
       },
@@ -771,6 +552,225 @@
             "right": "0"
           }
         }
+      },
+      "DivisorFrecuencia_0": {
+        "vlnv": "xilinx.com:module_ref:DivisorFrecuencia:1.0",
+        "xci_name": "DisplayColor_Leds_DivisorFrecuencia_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DivisorFrecuencia",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "DisplayColor_Leds_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clkout": {
+            "direction": "O"
+          }
+        }
+      },
+      "Leds_0": {
+        "vlnv": "xilinx.com:module_ref:Leds:1.0",
+        "xci_name": "DisplayColor_Leds_Leds_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Leds",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "InColor": {
+            "direction": "I"
+          },
+          "Estado": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "mode": {
+            "direction": "I"
+          },
+          "LedVerde": {
+            "direction": "O"
+          },
+          "LedAmarillo": {
+            "direction": "O"
+          },
+          "LedRojo": {
+            "direction": "O"
+          }
+        }
+      },
+      "DecoBCDa7SEG_0": {
+        "vlnv": "xilinx.com:module_ref:DecoBCDa7SEG:1.0",
+        "xci_name": "DisplayColor_Leds_DecoBCDa7SEG_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DecoBCDa7SEG",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "in1": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "Out7seg": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          }
+        }
+      },
+      "DecoBCDa7SEG_1": {
+        "vlnv": "xilinx.com:module_ref:DecoBCDa7SEG:1.0",
+        "xci_name": "DisplayColor_Leds_DecoBCDa7SEG_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DecoBCDa7SEG",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "in1": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "Out7seg": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          }
+        }
+      },
+      "Conversor_0": {
+        "vlnv": "xilinx.com:module_ref:Conversor:1.0",
+        "xci_name": "DisplayColor_Leds_Conversor_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Conversor",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "DisplayColor_Leds_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "datBin": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "Mode": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "Set": {
+            "direction": "I"
+          },
+          "datDec": {
+            "direction": "O",
+            "left": "5",
+            "right": "0"
+          }
+        }
+      },
+      "Memoria_1": {
+        "vlnv": "xilinx.com:module_ref:Memoria:1.0",
+        "xci_name": "DisplayColor_Leds_Memoria_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Memoria",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "DisplayColor_Leds_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "data_in": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "addr_in": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "addr_in2": {
+            "direction": "I"
+          },
+          "read": {
+            "direction": "I"
+          },
+          "write": {
+            "direction": "I"
+          },
+          "data_out": {
+            "direction": "O",
+            "left": "5",
+            "right": "0"
+          }
+        }
       }
     },
     "nets": {
@@ -778,7 +778,6 @@
         "ports": [
           "rst_0",
           "Div_frecuencia_0/rst",
-          "Leds_0/rst",
           "BtnPulsar_4/rst",
           "BtnPulsar_3/rst",
           "BtnPulsar_2/rst",
@@ -788,35 +787,11 @@
           "ModeIncDec_0/rst",
           "MaquinaEdos_0/rst",
           "Contador_0/rst",
-          "Conversor_0/rst",
-          "Memoria_0/reset",
+          "bin_a_bcd_0/rst",
           "DivisorFrecuencia_0/rst",
-          "bin_a_bcd_0/rst"
-        ]
-      },
-      "clk_0_1": {
-        "ports": [
-          "clk_0",
-          "Div_frecuencia_0/clk",
-          "BtnPulsar_4/clk",
-          "BtnPulsar_3/clk",
-          "BtnPulsar_2/clk",
-          "BtnPulsar_1/clk",
-          "BtnPulsar_0/clk",
-          "IncDecDisp_0/clk",
-          "ModeIncDec_0/clk",
-          "Conversor_0/clk",
-          "Memoria_0/clk",
-          "MaquinaEdos_0/clk",
-          "Leds_0/clk",
-          "DivisorFrecuencia_0/clk",
-          "bin_a_bcd_0/clk"
-        ]
-      },
-      "DisColor_0_Segmentos_Color": {
-        "ports": [
-          "DisColor_0/Segmentos_Color",
-          "Segmentos_Color_0"
+          "Leds_0/rst",
+          "Conversor_0/rst",
+          "Memoria_1/reset"
         ]
       },
       "Leds_0_LedVerde": {
@@ -876,29 +851,24 @@
       "Set_0_1": {
         "ports": [
           "Set_0",
+          "bin_a_bcd_0/set",
+          "Leds_0/mode",
           "Conversor_0/Set",
-          "Memoria_0/write",
-          "bin_a_bcd_0/set"
+          "Memoria_1/write"
         ]
       },
       "Conversor_0_datDec": {
         "ports": [
           "Conversor_0/datDec",
-          "Memoria_0/data_in",
-          "bin_a_bcd_0/conf_in"
+          "bin_a_bcd_0/conf_in",
+          "Memoria_1/data_in"
         ]
       },
       "BtnPulsar_4_p_btn": {
         "ports": [
           "BtnPulsar_4/p_btn",
-          "Memoria_0/read",
-          "MaquinaEdos_0/start"
-        ]
-      },
-      "xlconstant_0_dout": {
-        "ports": [
-          "xlconstant_0/dout",
-          "Memoria_0/cs"
+          "MaquinaEdos_0/start",
+          "Memoria_1/read"
         ]
       },
       "Contador_0_data_out": {
@@ -906,32 +876,6 @@
           "Contador_0/data_out",
           "MaquinaEdos_0/contador",
           "bin_a_bcd_0/bin_in"
-        ]
-      },
-      "MaquinaEdos_0_address": {
-        "ports": [
-          "MaquinaEdos_0/address",
-          "DisColor_0/Estado",
-          "Leds_0/Estado",
-          "Memoria_0/addr_in"
-        ]
-      },
-      "Memoria_0_data_out": {
-        "ports": [
-          "Memoria_0/data_out",
-          "Contador_0/data_in"
-        ]
-      },
-      "bin_a_bcd_0_bcd_dec": {
-        "ports": [
-          "bin_a_bcd_0/bcd_dec",
-          "Deco7SEG_0/in1"
-        ]
-      },
-      "bin_a_bcd_0_bcd_unid": {
-        "ports": [
-          "bin_a_bcd_0/bcd_unid",
-          "Deco7SEG_1/in1"
         ]
       },
       "btn_0_1": {
@@ -970,16 +914,79 @@
           "Contador_0/clk"
         ]
       },
-      "Deco7SEG_0_Out7seg": {
+      "Div_frecuencia_0_clkout": {
         "ports": [
-          "Deco7SEG_0/Out7seg",
+          "Div_frecuencia_0/clkout",
+          "Leds_0/clk"
+        ]
+      },
+      "clk_0_1": {
+        "ports": [
+          "clk_0",
+          "BtnPulsar_1/clk",
+          "BtnPulsar_0/clk",
+          "BtnPulsar_2/clk",
+          "BtnPulsar_3/clk",
+          "ModeIncDec_0/clk",
+          "IncDecDisp_0/clk",
+          "BtnPulsar_4/clk",
+          "DivisorFrecuencia_0/clk",
+          "bin_a_bcd_0/clk",
+          "MaquinaEdos_0/clk",
+          "Div_frecuencia_0/clk",
+          "Conversor_0/clk",
+          "Memoria_1/clk"
+        ]
+      },
+      "MaquinaEdos_0_address": {
+        "ports": [
+          "MaquinaEdos_0/address",
+          "DisColor_0/Estado",
+          "Leds_0/Estado",
+          "Memoria_1/addr_in"
+        ]
+      },
+      "addr_in2_0_1": {
+        "ports": [
+          "addr_in2_0",
+          "Leds_0/InColor",
+          "Memoria_1/addr_in2"
+        ]
+      },
+      "bin_a_bcd_0_bcd_dec": {
+        "ports": [
+          "bin_a_bcd_0/bcd_dec",
+          "DecoBCDa7SEG_0/in1"
+        ]
+      },
+      "bin_a_bcd_0_bcd_unid": {
+        "ports": [
+          "bin_a_bcd_0/bcd_unid",
+          "DecoBCDa7SEG_1/in1"
+        ]
+      },
+      "DecoBCDa7SEG_0_Out7seg": {
+        "ports": [
+          "DecoBCDa7SEG_0/Out7seg",
           "Out7seg_0"
         ]
       },
-      "Deco7SEG_1_Out7seg": {
+      "DecoBCDa7SEG_1_Out7seg": {
         "ports": [
-          "Deco7SEG_1/Out7seg",
+          "DecoBCDa7SEG_1/Out7seg",
           "Out7seg_1"
+        ]
+      },
+      "DisColor_0_Segmentos_Color": {
+        "ports": [
+          "DisColor_0/Segmentos_Color",
+          "Segmentos_Color_0"
+        ]
+      },
+      "Memoria_1_data_out": {
+        "ports": [
+          "Memoria_1/data_out",
+          "Contador_0/data_in"
         ]
       }
     }
